@@ -45,7 +45,7 @@ class SubcategoryController extends Controller
         }
         $result['category']=DB::table('categories')->where(['status'=>1])->get();
 
-        return view('admin/manage_subcategory',$result);
+        return view('admin/manage_Subcategory',$result);
     }
 
     public function manage_subcategory_process(Request $request)
