@@ -20,6 +20,7 @@ class CreateCartTable extends Migration
             $table->integer('qty');
             $table->integer('product_id');
             $table->integer('product_attr_id');
+            $table->timestamp('added_on');
             $table->timestamps();
         });
     }

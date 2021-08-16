@@ -31,6 +31,7 @@
                                                                 @endforeach
                                                         </select>
                                             </div>
+                                            
                                             <div class="form-group">
                                                 <label for="Subcategory_name" class="control-label mb-1">Subcategory Name</label>
                                                 <input id="Subcategory_name" value="{{$Subcategory_name}}" name="Subcategory_name" type="text" class="form-control" aria-required="true" aria-invalid="false" >

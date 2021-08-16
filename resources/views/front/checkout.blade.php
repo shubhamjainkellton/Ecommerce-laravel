@@ -12,7 +12,7 @@
   </section>
   <!-- / catg header banner section -->         
 
-  
+  <form id="f">
   <section id="checkout">
    <div class="container">
      <div class="row">
@@ -24,7 +24,7 @@
                 <div class="checkout-left">
                   <div class="panel-group" id="accordion">
                     @if(session()->has('FRONT_USER_LOGIN')==null)
-                    <input type="button" value="Login" class="aa-browse-btn" data-toggle="modal" data-target="#login-modal">  
+                    <input type="button" value="Login" class="aa-browse-btn" data-toggle="modal" data-target="#login-modal" required>  
                     <br/><br/>
                     OR
                     <br/><br/>
@@ -128,18 +128,22 @@
                       </tfoot>
                     </table>
                   </div>
-				  <h4>Coupon Code</h4>
+				  <!--h4>Coupon Code</h4>
                   <div class="aa-payment-method coupon_code">                    
                     <input type="text" placeholder="Coupon Code" class="aa-coupon-code">
 					<input type="submit" value="Apply Coupon" class="aa-browse-btn">              
-                  </div>
+                  </div-->
 				  <br/>
                   <h4>Payment Method</h4>
                   <div class="aa-payment-method">                    
-                    <label for="cashdelivery"><input type="radio" id="cashdelivery" name="optionsRadios"> Cash on Delivery </label>
-                    <label for="paypal"><input type="radio" id="paypal" name="optionsRadios" checked> Via Paypal </label>
-                    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_mc_vs_dc_ae.jpg" border="0" alt="PayPal Acceptance Mark">    
-                    <input type="submit" value="Place Order" class="aa-browse-btn">                
+                    <label for="cashdelivery"> Cash on Delivery </label>
+                    <button type="submit" value="Place Order" class="aa-browse-btn" onclick="myFunction()">Place Order</button><br>
+                    <br><button class="aa-browse-btn" onclick="window.print() event.preventDefault()">Print Order Details</button>
+
+                    <script>
+
+
+                    </script>
                   </div>
                 </div>
               </div>
@@ -152,3 +156,4 @@
  </section>
    
 @endsection
+  </form>

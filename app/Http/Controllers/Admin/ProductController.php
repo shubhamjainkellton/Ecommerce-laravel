@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use App\Models\Admin\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 use Storage;
 
@@ -98,6 +99,8 @@ class ProductController extends Controller
         die();*/
         $result['category']=DB::table('categories')->where(['status'=>1])->get();
 
+        $result['subcategory']=DB::table('subcategories')->where(['status'=>1])->get();
+
         $result['sizes']=DB::table('sizes')->where(['status'=>1])->get();
 
         $result['colors']=DB::table('colors')->where(['status'=>1])->get();
@@ -166,6 +169,7 @@ class ProductController extends Controller
             $image_name=time().'.'.$ext;
             $image->storeAs('/public/media',$image_name);
             $model->image=$image_name;
+            
         }
 
         $model->category_id=$request->post('category_id');;
@@ -186,6 +190,7 @@ class ProductController extends Controller
         $model->is_discounted=$request->post('is_discounted');
         $model->is_tranding=$request->post('is_tranding');
         $model->status=1;
+        $model->created_at=$model->updated_at=Date("Y-m-d H:i:s");
         $model->save();
         $pid=$model->id;
         /*Product Attr Start*/ 

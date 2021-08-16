@@ -20,28 +20,13 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <label for="category_name" class="control-label mb-1">Category Name</label>
-                                            <input id="category_name" value="{{$category_name}}" name="category_name" type="text" class="form-control" aria-required="true" aria-invalid="false" required>
+                                            <input id="category_name" value="{{$category_name}}" name="category_name" type="text" class="form-control" aria-required="true" aria-invalid="false" maxlength="50" pattern="^[a-zA-Z0-9]+$" required>
                                         </div>
 
-                                        <div class="col-md-4">
-                                            <label for="category_name" class="control-label mb-1">Parent  Category</label>
-                                            <select id="parent_category_id" name="parent_category_id" class="form-control" required>
-                                            <option value="0">Select Categories</option>
-                                            @foreach($category as $list)
-                                            @if($parent_category_id==$list->id)
-                                            <option selected value="{{$list->id}}">
-                                                @else
-                                            <option value="{{$list->id}}">
-                                                @endif
-                                                {{$list->category_name}}
-                                            </option>
-                                            @endforeach
-                                        </select>
-                                        </div>
-
+                                        
                                         <div class="col-md-4">
                                             <label for="category_slug" class="control-label mb-1">Category Slug</label>
-                                            <input id="category_slug" value="{{$category_slug}}" name="category_slug" type="text" class="form-control" aria-required="true" aria-invalid="false" required>
+                                            <input id="category_slug" value="{{$category_slug}}" name="category_slug" type="text" class="form-control" aria-required="true" aria-invalid="false" maxlength="50" pattern="^[a-zA-Z0-9]+$" required >
                                             @error('category_slug')
                                             <div class="alert alert-danger" role="alert">
                                                 {{$message}}

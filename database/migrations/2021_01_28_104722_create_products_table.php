@@ -26,14 +26,14 @@ class CreateProductsTable extends Migration
             $table->longText('uses')->nullable();
             $table->longText('warranty')->nullable();
             $table->integer('status');
-            $table->integer('image')->nullable();
-            $table->integer('slug');
-            $table->integer('lead_time')->nullable();
-            $table->integer('tax_id')->nullable();
-            $table->integer('is_promo');
-            $table->integer('is_featured');
-            $table->integer('is_discounted');
-            $table->integer('is_tranding');
+            $table->string('image')->nullable();
+            $table->string('slug');
+            $table->string('lead_time')->nullable();
+            $table->string('tax_id')->nullable();
+            $table->string('is_promo');
+            $table->string('is_featured');
+            $table->string('is_discounted');
+            $table->string('is_tranding');
             $table->timestamps();
         });
     }

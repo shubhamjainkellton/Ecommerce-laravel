@@ -54,7 +54,7 @@ Back
                      @csrf
                      <div class="form-group">
                         <label for="name" class="control-label mb-1"> Name</label>
-                        <input id="name" value="{{$name}}" name="name" type="text" class="form-control" aria-required="true" aria-invalid="false" required>
+                        <input id="name" value="{{$name}}" name="name" type="text" class="form-control" aria-required="true" aria-invalid="false" pattern="^[a-zA-Z0-9]+$" required>
                         @error('name')
                         <div class="alert alert-danger" role="alert">
                            {{$message}}		
@@ -63,7 +63,7 @@ Back
                      </div>
                      <div class="form-group">
                         <label for="slug" class="control-label mb-1"> Slug</label>
-                        <input id="slug" value="{{$slug}}" name="slug" type="text" class="form-control" aria-required="true" aria-invalid="false" required>
+                        <input id="slug" value="{{$slug}}" name="slug" type="text" class="form-control" aria-required="true" aria-invalid="false" pattern="^[a-zA-Z0-9]+$" required>
                         @error('slug')
                         <div class="alert alert-danger" role="alert">
                            {{$message}}		
@@ -99,6 +99,23 @@ Back
                                  @endforeach
                               </select>
                            </div>
+                           <div class="form-group">
+                              <div class="row">
+                                 <div class="col-md-4">
+                                    <label for="category_id" class="control-label mb-1"> Sub Category</label>
+                                    <select id="category_id" name="category_id" class="form-control" required>
+                                       <option value="">Select Sub Categories</option>
+                                       @foreach($subcategory as $list)
+                                       @if($category_id==$list->id)
+                                       <option selected value="{{$list->id}}">
+                                          @else
+                                       <option value="{{$list->id}}">
+                                          @endif
+                                          {{$list->Subcategory_name}}
+                                       </option>
+                                       @endforeach
+                                    </select>
+                                 </div>
                            <div class="col-md-4">
                               <label for="category_id" class="control-label mb-1"> Brand</label>
                               <select id="brand" name="brand" class="form-control" required>
@@ -289,11 +306,11 @@ Back
                               <input id="sku" name="sku[]" type="text" class="form-control" aria-required="true" aria-invalid="false" value="{{$pAArr['sku']}}" required>
                            </div>
                            <div class="col-md-2">
-                              <label for="mrp" class="control-label mb-1"> MRP</label>
+                              <label for="mrp" class="control-label mb-1"> Actual Price</label>
                               <input id="mrp" name="mrp[]" type="text" class="form-control" aria-required="true" aria-invalid="false" value="{{$pAArr['mrp']}}" required>
                            </div>
                            <div class="col-md-2">
-                              <label for="price" class="control-label mb-1"> Price</label>
+                              <label for="price" class="control-label mb-1"> Offer Price</label>
                               <input id="price" name="price[]" type="text" class="form-control" aria-required="true" aria-invalid="false" value="{{$pAArr['price']}}" required>
                            </div>
                            <div class="col-md-3">
@@ -358,6 +375,10 @@ Back
             <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
             Submit
             </button>
+            <button id="payment-button" type="reset" class="btn btn-lg btn-info btn-block"  value="Reset">
+               Reset
+               </button>
+            
          </div>
          <input type="hidden" name="id" value="{{$id}}"/>
       </form>

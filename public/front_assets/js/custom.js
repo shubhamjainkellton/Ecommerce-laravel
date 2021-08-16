@@ -1,34 +1,7 @@
-/** 
-  * Template Name: Daily Shop
-  * Version: 1.0  
-  * Template Scripts
-  * Author: MarkUps
-  * Author URI: http://www.markups.io/
-
-  Custom JS
-  
-
-  1. CARTBOX
-  2. TOOLTIP
-  3. PRODUCT VIEW SLIDER 
-  4. POPULAR PRODUCT SLIDER (SLICK SLIDER) 
-  5. FEATURED PRODUCT SLIDER (SLICK SLIDER)
-  6. LATEST PRODUCT SLIDER (SLICK SLIDER) 
-  7. TESTIMONIAL SLIDER (SLICK SLIDER)
-  8. CLIENT BRAND SLIDER (SLICK SLIDER)
-  9. PRICE SLIDER  (noUiSlider SLIDER)
-  10. SCROLL TOP BUTTON
-  11. PRELOADER
-  12. GRID AND LIST LAYOUT CHANGER 
-  13. RELATED ITEM SLIDER (SLICK SLIDER)
-
-  
-**/
 
 jQuery(function($){
 
 
-  /* ----------------------------------------------------------- */
   /*  1. CARTBOX 
   /* ----------------------------------------------------------- */
     
@@ -40,13 +13,11 @@ jQuery(function($){
       }
      );   
   
-  /* ----------------------------------------------------------- */
   /*  2. TOOLTIP
   /* ----------------------------------------------------------- */    
     jQuery('[data-toggle="tooltip"]').tooltip();
     jQuery('[data-toggle2="tooltip"]').tooltip();
 
-  /* ----------------------------------------------------------- */
   /*  3. PRODUCT VIEW SLIDER 
   /* ----------------------------------------------------------- */    
 
@@ -58,7 +29,6 @@ jQuery(function($){
         loading_image: 'demo/images/loading.gif'
     });
 
-  /* ----------------------------------------------------------- */
   /*  4. POPULAR PRODUCT SLIDER (SLICK SLIDER)
   /* ----------------------------------------------------------- */      
 
@@ -92,14 +62,9 @@ jQuery(function($){
             slidesToScroll: 1
           }
         }
-        // You can unslick at a given breakpoint now by adding:
-        // settings: "unslick"
-        // instead of a settings object
-      ]
+        ]
     }); 
 
-  
-  /* ----------------------------------------------------------- */
   /*  5. FEATURED PRODUCT SLIDER (SLICK SLIDER)
   /* ----------------------------------------------------------- */      
 
@@ -133,13 +98,9 @@ jQuery(function($){
               slidesToScroll: 1
             }
           }
-          // You can unslick at a given breakpoint now by adding:
-          // settings: "unslick"
-          // instead of a settings object
         ]
     });
     
-  /* ----------------------------------------------------------- */
   /*  6. LATEST PRODUCT SLIDER (SLICK SLIDER)
   /* ----------------------------------------------------------- */      
     jQuery('.aa-latest-slider').slick({
@@ -172,14 +133,9 @@ jQuery(function($){
               slidesToScroll: 1
             }
           }
-          // You can unslick at a given breakpoint now by adding:
-          // settings: "unslick"
-          // instead of a settings object
-        ]
+         ]
     });
-
-  /* ----------------------------------------------------------- */
-  /*  7. TESTIMONIAL SLIDER (SLICK SLIDER)
+/*  7. TESTIMONIAL SLIDER (SLICK SLIDER)
   /* ----------------------------------------------------------- */     
     
     jQuery('.aa-testimonial-slider').slick({
@@ -190,8 +146,6 @@ jQuery(function($){
       slidesToShow: 1,
       adaptiveHeight: true
     });
-
-  /* ----------------------------------------------------------- */
   /*  8. CLIENT BRAND SLIDER (SLICK SLIDER)
   /* ----------------------------------------------------------- */  
 
@@ -227,13 +181,9 @@ jQuery(function($){
               slidesToScroll: 1
             }
           }
-          // You can unslick at a given breakpoint now by adding:
-          // settings: "unslick"
-          // instead of a settings object
         ]
     });
 
-  /* ----------------------------------------------------------- */
   /*  9. PRICE SLIDER  (noUiSlider SLIDER)
   /* ----------------------------------------------------------- */        
 
@@ -281,11 +231,8 @@ jQuery(function($){
 
 
     
-  /* ----------------------------------------------------------- */
   /*  10. SCROLL TOP BUTTON
   /* ----------------------------------------------------------- */
-
-  //Check to see if the window is top if not then display button
 
     jQuery(window).scroll(function(){
       if ($(this).scrollTop() > 300) {
@@ -294,15 +241,12 @@ jQuery(function($){
         $('.scrollToTop').fadeOut();
       }
     });
-     
-    //Click event to scroll to top
 
     jQuery('.scrollToTop').click(function(){
       $('html, body').animate({scrollTop : 0},800);
       return false;
     });
   
-  /* ----------------------------------------------------------- */
   /*  11. PRELOADER
   /* ----------------------------------------------------------- */
 
@@ -310,7 +254,6 @@ jQuery(function($){
       jQuery('#wpf-loader-two').delay(200).fadeOut('slow'); // will fade out      
     })
 
-  /* ----------------------------------------------------------- */
   /*  12. GRID AND LIST LAYOUT CHANGER 
   /* ----------------------------------------------------------- */
 
@@ -323,8 +266,6 @@ jQuery(function($){
     jQuery(".aa-product-catg").removeClass("list");
   });
 
-
-  /* ----------------------------------------------------------- */
   /*  13. RELATED ITEM SLIDER (SLICK SLIDER)
   /* ----------------------------------------------------------- */      
 
@@ -358,9 +299,6 @@ jQuery(function($){
             slidesToScroll: 1
           }
         }
-        // You can unslick at a given breakpoint now by adding:
-        // settings: "unslick"
-        // instead of a settings object
       ]
     }); 
     
@@ -524,43 +462,17 @@ jQuery('#frmLogin').submit(function(e){
 });
 
 
-function forgot_password(){
-  jQuery('#popup_forgot').show();
-  jQuery('#popup_login').hide();
-}
 
 function show_login_popup(){
   jQuery('#popup_forgot').hide();
   jQuery('#popup_login').show();
 }
 
-jQuery('#frmForgot').submit(function(e){
-  jQuery('#forgot_msg').html("Please wait...");
-  
-  e.preventDefault();
-  jQuery.ajax({
-    url:'/forgot_password',
-    data:jQuery('#frmForgot').serialize(),
-    type:'post',
-    success:function(result){
-      console.log(result);
-      jQuery('#forgot_msg').html(result.msg);
-    }
-  });
-});
+var form = document.getElementById('f');
 
-jQuery('#frmUpdatePassword').submit(function(e){
-  jQuery('#thank_you_msg').html("Please wait...");
-  jQuery('#thank_you_msg').html("");
-  e.preventDefault();
-  jQuery.ajax({
-    url:'/forgot_password_change_process',
-    data:jQuery('#frmUpdatePassword').serialize(),
-    type:'post',
-    success:function(result){
-      console.log(result);
-      jQuery('#frmUpdatePassword')[0].reset();
-      jQuery('#thank_you_msg').html(result.msg);
-    }
-  });
-});
+function myFunction() {
+  if (form.checkValidity()) {
+    alert("Adding Succesful!");
+    event.preventDefault()
+  }
+}

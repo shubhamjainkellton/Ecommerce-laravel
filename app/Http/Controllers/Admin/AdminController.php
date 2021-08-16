@@ -16,7 +16,7 @@ class AdminController extends Controller
     public function index(Request $request)
     {
         if($request->session()->has('ADMIN_LOGIN')){
-            return redirect('admin/dashboard');
+            return redirect('admin/product');
         }else{
             return view('admin.login');
         }
@@ -34,7 +34,7 @@ class AdminController extends Controller
             if(Hash::check($request->post('password'),$result->password)){
                 $request->session()->put('ADMIN_LOGIN',true);
                 $request->session()->put('ADMIN_ID',$result->id);
-                return redirect('admin/dashboard');
+                return redirect('admin/product');
             }else{
                 $request->session()->flash('error','Please enter correct password');
                 return redirect('admin');

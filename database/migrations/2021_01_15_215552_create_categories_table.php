@@ -17,7 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->string('category_name');
             $table->string('category_slug');
-            $table->integer('parent_category_id');
+            $table->integer('parent_category_id')->nullable();
             $table->string('category_image')->nullable();
             $table->integer('is_home');
             $table->integer('status');

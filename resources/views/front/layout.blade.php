@@ -56,7 +56,7 @@
               <!-- start header top left -->
               <div class="aa-header-top-left">
                 
-                <!-- start cellphone -->
+                <!-- start cellphone >
                 <div class="cellphone hidden-xs">
                   <p><span class="fa fa-phone"></span>00-62-658-658</p>
                 </div>
@@ -65,7 +65,7 @@
               <!-- / header top left -->
               <div class="aa-header-top-right">
                 <ul class="aa-head-top-nav-right">
-                  <li><a href="javascript:void(0)">My Account</a></li>
+                  
                   
                   <li class="hidden-xs"><a href="{{url('/cart')}}">My Cart</a></li>
                   <li class="hidden-xs"><a href="javascript:void(0)">Checkout</a></li>
@@ -310,11 +310,11 @@
               <label for="">Password<span>*</span></label>
               <input type="password" placeholder="Password" name="str_login_password" required value="{{$login_pwd}}">
               <button class="aa-browse-btn" type="submit" id="btnLogin">Login</button>
-              <label for="rememberme" class="rememberme"><input type="checkbox" id="rememberme" name="rememberme" {{$is_remember}}> Remember me </label>
+              <!--<label for="rememberme" class="rememberme"><input type="checkbox" id="rememberme" name="rememberme" {{$is_remember}}> Remember me </label>-->
 
               <div id="login_msg"></div>
 
-              <p class="aa-lost-password"><a href="javascript:void(0)" onclick="forgot_password()">Lost your password?</a></p>
+              <!--<p class="aa-lost-password"><a href="javascript:void(0)" onclick="forgot_password()">Lost your password?</a></p>-->
               
               <div class="aa-register-now">
                 Don't have an account?<a href="{{url('registration')}}">Register now!</a>
