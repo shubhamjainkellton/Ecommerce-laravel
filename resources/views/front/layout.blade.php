@@ -103,49 +103,6 @@
               </div>
               <!-- / logo  -->
                <!-- cart box -->
-              @php
-              $getAddToCartTotalItem=getAddToCartTotalItem();
-              $totalCartItem=count($getAddToCartTotalItem);
-              $totalPrice=0;
-              @endphp 
-              <div class="aa-cartbox">
-                <a class="aa-cart-link" href="#" id="cartBox">
-                  <span class="fa fa-shopping-basket"></span>
-                  <span class="aa-cart-title">SHOPPING CART</span>
-                  <span class="aa-cart-notify">{{$totalCartItem}}</span>
-                </a>
-                <div class="aa-cartbox-summary">
-               @if($totalCartItem>0)
-                
-                  <ul>
-                    @foreach($getAddToCartTotalItem as $cartItem)
-
-                    @php
-                    $totalPrice=$totalPrice+($cartItem->qty*$cartItem->price)
-                    @endphp
-                    <li>
-                      <a class="aa-cartbox-img" href="#"><img src="{{asset('storage/media/'.$cartItem->image)}}" alt="img"></a>
-                      <div class="aa-cartbox-info">
-                        <h4><a href="#">{{$cartItem->name}}</a></h4>
-                        <p>{{$cartItem->qty}} * Rs {{$cartItem->price}}</p>
-                      </div>
-                    </li>
-                    @endforeach                  
-                    <li>
-                      <span class="aa-cartbox-total-title">
-                        Total
-                      </span>
-                      <span class="aa-cartbox-total-price">
-                        Rs {{$totalPrice}}
-                      </span>
-                    </li>
-                  </ul>
-                  <a class="aa-cartbox-checkout aa-primary-btn" href="{{url('/cart')}}">Cart</a>
-               
-                @endif
-                </div>
-              </div>
-              <!-- / cart box -->
               <!-- search box -->
               <div class="aa-search-box">
                 <form action="">
