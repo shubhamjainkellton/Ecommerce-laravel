@@ -3,7 +3,7 @@
 @section('category_select','active')
 @section('container')
     <h1 class="mb10">Manage subcategory</h1>
-    <a href="{{url('admin/subcategory')}}">
+    <a href="{{url('admin/Subcategory')}}">
         <button type="button" class="btn btn-success">
             Back
         </button>
@@ -34,7 +34,7 @@
                                             
                                             <div class="form-group">
                                                 <label for="Subcategory_name" class="control-label mb-1">Subcategory Name</label>
-                                                <input id="Subcategory_name" value="{{$Subcategory_name}}" name="Subcategory_name" type="text" class="form-control" aria-required="true" aria-invalid="false" >
+                                                <input id="Subcategory_name" value="{{$Subcategory_name}}" name="Subcategory_name" type="text" class="form-control" aria-required="true" aria-invalid="false" pattern="^[a-zA-Z0-9_ ]*$" maxlength="50" required>
                                                 @error('Subcategory_name')
                                                 <div class="alert alert-danger" role="alert">
                                                     {{$message}}
@@ -45,6 +45,9 @@
                                             <div>
                                                 <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
                                                     Submit
+                                                </button>
+                                                <button id="payment-button" type="reset" class="btn btn-lg btn-info btn-block"  value="Reset">
+                                                    Cancel
                                                 </button>
                                             </div>
                                             <input type="hidden" name="id" value="{{$id}}"/>
