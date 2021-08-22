@@ -56,8 +56,8 @@
               <!-- start prduct navigation -->
              <ul class="nav nav-tabs aa-products-tab">
                 <li class="active"><a href="#featured" data-toggle="tab">Featured</a></li>
-                <li><a href="#tranding" data-toggle="tab">Tranding</a></li>
-                <li><a href="#discounted" data-toggle="tab">Discounted</a></li>                    
+                <li><a href="#tranding" data-toggle="tab">Trending</a></li>
+                                    
               </ul>
               <!-- Tab panes -->
               <div class="tab-content">
@@ -119,33 +119,6 @@
                 </div>
                 <!-- / featured product category -->
 
-                <!-- start discounted product category -->
-                <div class="tab-pane fade" id="discounted">
-                  <ul class="aa-product-catg aa-discounted-slider">
-                    <!-- start single product item -->
-                    
-                    @if(isset($home_discounted_product[$list->id][0]))
-                       @foreach($home_discounted_product[$list->id] as $productArr)
-                        <li>
-                          <figure>
-                            <a class="aa-product-img" href="{{url('product/'.$productArr->slug)}}"><img src="{{asset('storage/media/'.$productArr->image)}}" alt="{{$productArr->name}}"></a>
-                            <a class="aa-add-card-btn" href="javascript:void(0)" onclick="home_add_to_cart('{{$productArr->id}}','{{$home_product_attr[$productArr->id][0]->size}}','{{$home_product_attr[$productArr->id][0]->color}}')"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
-                            <figcaption>
-                              <h4 class="aa-product-title"><a href="{{url('product/'.$productArr->slug)}}">{{$productArr->name}}</a></h4>
-                              <span class="aa-product-price">Rs {{$home_discounted_product_attr[$productArr->id][0]->price}}</span><span class="aa-product-price"><del>Rs {{$home_discounted_product_attr[$productArr->id][0]->mrp}}</del></span>
-                            </figcaption>
-                          </figure>                          
-                        </li>  
-                        @endforeach    
-                        @else
-                        <li>
-                          <figure>
-                            No data found
-                          </figure>
-                        <li>
-                        @endif                                                                                     
-                  </ul>
-                </div>
                 <!-- / latest product category -->              
               </div>
             </div>
