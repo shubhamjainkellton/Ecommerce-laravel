@@ -24,7 +24,7 @@
                     <div id="email_error" class="field_error"></div>
 
                     <label for="">Password<span>*</span></label>
-                    <input type="password" placeholder="Password" name="password">
+                    <input type="password" placeholder="Password" name="password" maxlength="8">
                     <div id="password_error" class="field_error"></div> 
 
                     <label for="">Mobile<span>*</span></label>
