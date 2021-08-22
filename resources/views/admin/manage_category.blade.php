@@ -39,7 +39,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="image" class="control-label mb-1"> Image</label>
-                                    <input id="category_image" name="category_image" type="file" class="form-control" aria-required="true" aria-invalid="false">
+                                    <input id="category_image" name="category_image" type="file" class="form-control" aria-required="true" aria-invalid="false" required>
                                     @error('category_image')
                                     <div class="alert alert-danger" role="alert">
                                     {{$message}}		
