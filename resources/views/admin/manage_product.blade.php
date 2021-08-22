@@ -54,7 +54,7 @@ Back
                      @csrf
                      <div class="form-group">
                         <label for="name" class="control-label mb-1"> Name</label>
-                        <input id="name" value="{{$name}}" name="name" type="text" class="form-control" aria-required="true" aria-invalid="false" pattern="^[a-zA-Z0-9]+$" required>
+                        <input id="name" value="{{$name}}" name="name" type="text" class="form-control" aria-required="true" aria-invalid="false" pattern="^[a-zA-Z0-9_ ]*$" required>
                         @error('name')
                         <div class="alert alert-danger" role="alert">
                            {{$message}}		
@@ -63,7 +63,7 @@ Back
                      </div>
                      <div class="form-group">
                         <label for="slug" class="control-label mb-1"> Slug</label>
-                        <input id="slug" value="{{$slug}}" name="slug" type="text" class="form-control" aria-required="true" aria-invalid="false" pattern="^[a-zA-Z0-9]+$" required>
+                        <input id="slug" value="{{$slug}}" name="slug" type="text" class="form-control" aria-required="true" aria-invalid="false" pattern="^[a-zA-Z0-9_ ]*$" required>
                         @error('slug')
                         <div class="alert alert-danger" role="alert">
                            {{$message}}		
