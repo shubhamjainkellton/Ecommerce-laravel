@@ -35,10 +35,7 @@
             <nav class="navbar-mobile">
                 <div class="container-fluid">
                     <ul class="navbar-mobile__list list-unstyled">
-                    <li class="@yield('dashboard_select')">
-                            <a href="{{url('admin/dashboard')}}">
-                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
-                        </li>
+                    
                        
                         <li class="@yield('category_select')">
                             <a href="{{url('admin/category')}}">
@@ -100,10 +97,7 @@
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
-                        <li class="@yield('dashboard_select')">
-                            <a href="{{url('admin/dashboard')}}">
-                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
-                        </li>
+                        
                        
                         <li class="@yield('category_select')">
                             <a href="{{url('admin/category')}}">
