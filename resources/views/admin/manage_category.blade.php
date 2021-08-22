@@ -20,13 +20,13 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <label for="category_name" class="control-label mb-1">Category Name</label>
-                                            <input id="category_name" value="{{$category_name}}" name="category_name" type="text" class="form-control" aria-required="true" aria-invalid="false" maxlength="50" pattern="^[a-zA-Z0-9]+$" required>
+                                            <input id="category_name" value="{{$category_name}}" name="category_name" type="text" class="form-control" aria-required="true" aria-invalid="false" maxlength="50" pattern="^[a-zA-Z0-9_ ]*$" required>
                                         </div>
 
                                         
                                         <div class="col-md-4">
                                             <label for="category_slug" class="control-label mb-1">Category Slug</label>
-                                            <input id="category_slug" value="{{$category_slug}}" name="category_slug" type="text" class="form-control" aria-required="true" aria-invalid="false" maxlength="50" pattern="^[a-zA-Z0-9]+$" required >
+                                            <input id="category_slug" value="{{$category_slug}}" name="category_slug" type="text" class="form-control" aria-required="true" aria-invalid="false" maxlength="1999" pattern="^[a-zA-Z0-9_ ]+$" required >
                                             @error('category_slug')
                                             <div class="alert alert-danger" role="alert">
                                                 {{$message}}
@@ -57,6 +57,10 @@
                                 <div>
                                     <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
                                         Submit
+                                    </button>
+
+                                    <button id="payment-button" type="reset" class="btn btn-lg btn-info btn-block"  value="Reset">
+                                        Cancel
                                     </button>
                                 </div>
                                 <input type="hidden" name="id" value="{{$id}}"/>
