@@ -358,7 +358,7 @@ class FrontController extends Controller
        $valid=Validator::make($request->all(),[
             "name"=>'required',
             "email"=>'required|email|unique:customers,email',
-            "password"=>'required',
+            "password"=>'required|confirmed',
             "mobile"=>'required|numeric|digits:10',
        ]);
 
