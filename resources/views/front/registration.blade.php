@@ -28,7 +28,7 @@
                     <div id="password_error" class="field_error"></div> 
                     
                     <label for=""> Confirm Password<span>*</span></label>
-                    <input id="password" type="password" name="password_confirmation" required>
+                    <input id="password" type="password" placeholder="Confirm Password" name="password_confirmation" required>
                     <div id="password_error" class="field_error"></div> 
 
                     <label for="">Mobile<span>*</span></label>
