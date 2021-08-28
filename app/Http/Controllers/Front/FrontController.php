@@ -359,7 +359,7 @@ class FrontController extends Controller
             "name"=>'required',
             "email"=>'required|email|unique:customers,email',
             "password"=>'required|confirmed',
-            "mobile"=>'required|numeric|digits:10',
+            "mobile"=>'required|numeric|digits:10|unique:customers,mobile',
        ]);
 
        if(!$valid->passes()){
