@@ -1,20 +1,6 @@
 @extends('front/layout')
 @section('page_title','Home Page')
 @section('container')
-<!-- banner section -->
-<section id="aa-banner">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">        
-        <div class="row">
-          <div class="aa-banner-area">
-          <a href="#"><img src="{{asset('front_assets/img/banner.jpg')}}" alt="fashion banner img"></a>
-        </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
   <!-- / slider -->
   <!-- Start Promo section -->
   <section id="aa-promo">
