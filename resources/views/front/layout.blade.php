@@ -73,7 +73,7 @@
                   @if(session()->has('FRONT_USER_LOGIN')!=null)
                   <li><a href="{{url('/logout')}}">Logout</a></li>
                   @else
-                    <li><a href="" data-toggle="modal" data-target="#login-modal">Login</a></li>
+                    <li><a href="" data-toggle="modal" data-target="#login-modal">Login/Signup</a></li>
                   @endif
                   
 
